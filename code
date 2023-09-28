@@ -1,14 +1,90 @@
 // WAR
-
-
 //pretty things
+section {
+display: block;
+float: left;
+width: 80px;
+border: 3px solid black;
+
+&.player2{
+      border-color: black;
+    }
+    &.player{
+      border-color: black;
+    }
+    & > div{
+      width: 80px;
+      border: 3px solid black;
+      &.right{
+        float: right;
+      }
+      &.left{
+        float: left;
+      }
+      &.info{
+        padding: 10px;
+      }
+      &.card{
+        font-size: 62px;
+        min-height: 220px;
+        padding-top: 18%;
+        &.spades, &.clubs {
+          color: black;
+        }
+        &.diamonds, &.hearts{
+          color: red;
+        }
+        span.name{
+          
+        }
+        &.spades span.name:after{
+          content: "\2660";
+        }
+        &.diamonds span.name:after{
+          content: "\2666";
+        }
+        &.clubs span.name:after{
+          content: "\2663";
+        }
+        &.hearts span.name:after{
+          content: "\2665";
+        }
+      }
+      div{
+        &[data-points]{
+          &:after{
+            content: attr(data-points);
+            margin: 0 0 0 5px;
+          }
+        }
+        &[data-cards-left]{
+          &:after{
+            content: attr(data-cards-left);
+            margin: 0 0 0 5px;
+          }
+        }
+        &[data-games-won]{
+          &:after{
+            content: attr(data-games-won);
+            margin: 0 0 0 5px;
+          }
+        }
+      }
+    }
+  }
+  footer{
+    button.draw{
+      margin: 10px;
+      padding: 10px;
+      font-size: 22px;
+    }
+  }
+}
+
+
 //What I need for the pretty things: 
-//The actual cards rect(#, #, #, #) x 2 
-//The suits ♠♥♣♦ 
 //Button for resetting game
-//Button for drawing card
-//Button for tie breaker (how do I make it show up only during the tie situation?)
-//Points 
+//Button for tie breaker (how do I make it show up only during the tie situation?) 
 
 
 console.clear();
